@@ -1,0 +1,32 @@
+{
+  "name": "MedETechni",
+  "colors": {
+    "celeste": "#AFE6E6",
+    "moonstone": "#009EB5",
+    "folly": "#FF3250",
+    "gunmetal": "#003241",
+    "antiFlashWhite": "#F0F0F0"
+  },
+  "typography": {
+    "headings": "TechHead",
+    "body": "Roboto"
+  },
+  "logo": {
+    "isotipo": "logo.svg",
+    "variants": ["horizontal", "vertical", "grayscale"],
+    "margins": "Space of one 'e' letter around the logo"
+  },
+  "rules": {
+    "donts": [
+      "Do not use aqua tones on red background",
+      "Do not alter logo proportions",
+      "Do not use Moonstone over Celeste",
+      "Do not use unapproved color variations"
+    ]
+  },
+  "style": {
+    "backgrounds": "Gradients from white to antiFlashWhite or aqua tones",
+    "cta": "Use TechHead font and red (Folly) for emphasis",
+    "bodyText": "Use Roboto for all other text"
+  }
+}
