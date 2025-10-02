@@ -1,0 +1,25 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de cicatrización – MedETechni</title>
+<link rel="stylesheet" href="/brand.css">
+<style>main{max-width:800px;margin:24px auto;padding:0 16px} .box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px}</style>
+</head><body>
+<header style="background:#009EB5;color:#fff;padding:16px"><a href="/" style="color:#fff;text-decoration:none">← Inicio</a> | Calculadora de cicatrización</header>
+<main><div class="box">
+
+<p>Calcula el % de reducción de área de la herida (PAR).</p>
+<label>Área inicial (cm²) <input id="ai" type="number" step="0.01"></label><br>
+<label>Área actual (cm²) <input id="af" type="number" step="0.01"></label><br>
+<button type="button" onclick="go()">Calcular</button>
+<p id="out" style="font-weight:bold"></p>
+<script>
+function go(){
+  const ai=parseFloat(document.getElementById('ai').value||0);
+  const af=parseFloat(document.getElementById('af').value||0);
+  if(ai<=0){ document.getElementById('out').textContent='Ingresa un área inicial válida.'; return; }
+  const par = ((ai-af)/ai)*100;
+  let cat = par>=50? 'Respuesta favorable' : (par>=20? 'Mejoría parcial' : 'Sin respuesta');
+  document.getElementById('out').textContent = 'PAR: '+par.toFixed(1)+'% — '+cat;
+}
+</script>
+</div><p style="text-align:center;color:#64748b;margin-top:24px">© MedETechni</p></main></body></html>

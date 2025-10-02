@@ -1,0 +1,26 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de seguridad UVC (simplificada) – MedETechni</title>
+<link rel="stylesheet" href="/brand.css">
+<style>main{max-width:800px;margin:24px auto;padding:0 16px} .box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px}</style>
+</head><body>
+<header style="background:#009EB5;color:#fff;padding:16px"><a href="/" style="color:#fff;text-decoration:none">← Inicio</a> | Calculadora de seguridad UVC (simplificada)</header>
+<main><div class="box">
+
+<p>Referencia simple para exposición UVC 222&nbsp;nm basada en protocolo.</p>
+<label>Minutos de exposición <input id="m" type="number" min="0" step="0.1"></label><br>
+<label>Sesiones por semana <input id="s" type="number" min="0" step="1" value="2"></label><br>
+<button type="button" onclick="go()">Evaluar</button>
+<p id="out" style="font-weight:bold"></p>
+<script>
+function go(){
+  const m=parseFloat(document.getElementById('m').value||0);
+  const s=parseInt(document.getElementById('s').value||0);
+  let msg='';
+  if(m<=0||s<=0){ msg='Ingresa valores válidos.'; }
+  else if(m<=5 && s<=2){ msg='Dentro de los parámetros del protocolo (1–5 min, 2/semana).'; }
+  else { msg='Fuera de rango recomendado: revisar protocolo clínico.'; }
+  document.getElementById('out').textContent = msg;
+}
+</script>
+</div><p style="text-align:center;color:#64748b;margin-top:24px">© MedETechni</p></main></body></html>

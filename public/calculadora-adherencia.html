@@ -1,0 +1,25 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de adherencia – MedETechni</title>
+<link rel="stylesheet" href="/brand.css">
+<style>main{max-width:800px;margin:24px auto;padding:0 16px} .box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px}</style>
+</head><body>
+<header style="background:#009EB5;color:#fff;padding:16px"><a href="/" style="color:#fff;text-decoration:none">← Inicio</a> | Calculadora de adherencia</header>
+<main><div class="box">
+
+<p>Porcentaje de sesiones asistidas sobre planificadas.</p>
+<label>Planificadas <input id="p" type="number" min="1" step="1"></label><br>
+<label>Asistidas <input id="a" type="number" min="0" step="1"></label><br>
+<button type="button" onclick="go()">Calcular</button>
+<p id="out" style="font-weight:bold"></p>
+<script>
+function go(){
+  const p=parseInt(document.getElementById('p').value||0);
+  const a=parseInt(document.getElementById('a').value||0);
+  if(p<=0){ document.getElementById('out').textContent='Ingresa # planificadas > 0'; return; }
+  const pct = (a/p)*100;
+  let cat = pct>=80 ? 'Buena' : (pct>=60 ? 'Regular' : 'Baja');
+  document.getElementById('out').textContent = 'Adherencia: '+pct.toFixed(0)+'% — '+cat;
+}
+</script>
+</div><p style="text-align:center;color:#64748b;margin-top:24px">© MedETechni</p></main></body></html>

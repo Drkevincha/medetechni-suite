@@ -1,0 +1,1 @@
+Esta carpeta contiene los archivos estáticos (index.html, brand.css, img/, calculadoras, etc.) que el servidor Express sirve con express.static('/public').

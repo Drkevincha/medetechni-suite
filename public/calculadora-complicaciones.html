@@ -1,0 +1,28 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de complicaciones (simple) – MedETechni</title>
+<link rel="stylesheet" href="/brand.css">
+<style>main{max-width:800px;margin:24px auto;padding:0 16px} .box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px}</style>
+</head><body>
+<header style="background:#009EB5;color:#fff;padding:16px"><a href="/" style="color:#fff;text-decoration:none">← Inicio</a> | Calculadora de complicaciones (simple)</header>
+<main><div class="box">
+
+<p>Marca complicaciones observadas en el seguimiento.</p>
+<form id="f">
+  <label><input type="checkbox" name="c" value="Infección"> Infección</label><br>
+  <label><input type="checkbox" name="c" value="Reingreso"> Reingreso</label><br>
+  <label><input type="checkbox" name="c" value="Nueva lesión"> Nueva lesión</label><br>
+  <label><input type="checkbox" name="c" value="Amputación menor"> Amputación menor</label><br>
+  <label><input type="checkbox" name="c" value="Amputación mayor"> Amputación mayor</label><br>
+  <button type="button" onclick="go()">Calcular</button>
+</form>
+<p id="out" style="font-weight:bold"></p>
+<script>
+function go(){
+  const checks = Array.from(document.querySelectorAll('[name=c]:checked'));
+  const n = checks.length;
+  let cat = n==0 ? 'Sin complicaciones' : (n<=2 ? 'Leve/Moderado' : 'Severo');
+  document.getElementById('out').textContent = 'Total: '+n+' — Categoría: '+cat;
+}
+</script>
+</div><p style="text-align:center;color:#64748b;margin-top:24px">© MedETechni</p></main></body></html>

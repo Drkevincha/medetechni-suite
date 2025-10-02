@@ -1,0 +1,34 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escala San Elián – MedETechni</title>
+<link rel="stylesheet" href="/brand.css">
+<style>main{max-width:800px;margin:24px auto;padding:0 16px} .box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px}</style>
+</head><body>
+<header style="background:#009EB5;color:#fff;padding:16px"><a href="/" style="color:#fff;text-decoration:none">← Inicio</a> | Escala San Elián</header>
+<main><div class="box">
+
+<p>Asigna puntajes 0–2 a cada dominio. El total va de 0 a 20.</p>
+<form id="f">
+  <ol>
+    <li>Dominio 1: <input type="number" min="0" max="2" step="1" value="0" name="d1" style="width:60px"></li>
+<li>Dominio 2: <input type="number" min="0" max="2" step="1" value="0" name="d2" style="width:60px"></li>
+<li>Dominio 3: <input type="number" min="0" max="2" step="1" value="0" name="d3" style="width:60px"></li>
+<li>Dominio 4: <input type="number" min="0" max="2" step="1" value="0" name="d4" style="width:60px"></li>
+<li>Dominio 5: <input type="number" min="0" max="2" step="1" value="0" name="d5" style="width:60px"></li>
+<li>Dominio 6: <input type="number" min="0" max="2" step="1" value="0" name="d6" style="width:60px"></li>
+<li>Dominio 7: <input type="number" min="0" max="2" step="1" value="0" name="d7" style="width:60px"></li>
+<li>Dominio 8: <input type="number" min="0" max="2" step="1" value="0" name="d8" style="width:60px"></li>
+<li>Dominio 9: <input type="number" min="0" max="2" step="1" value="0" name="d9" style="width:60px"></li>
+<li>Dominio 10: <input type="number" min="0" max="2" step="1" value="0" name="d10" style="width:60px"></li>
+  </ol>
+  <button type="button" onclick="calc()">Calcular</button>
+</form>
+<p id="out" style="font-weight:bold"></p>
+<script>
+function calc(){
+  let s=0; for(let i=1;i<=10;i++){ s+=parseInt(document.querySelector('[name=d'+i+']').value||0); }
+  let cat = s<10 ? 'Baja (favorable)' : (s<=15 ? 'Moderada' : 'Alta (desfavorable)');
+  document.getElementById('out').textContent = 'Puntaje total: '+s+' / 20 — Severidad: '+cat;
+}
+</script>
+</div><p style="text-align:center;color:#64748b;margin-top:24px">© MedETechni</p></main></body></html>
