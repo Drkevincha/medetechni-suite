@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Archivos temporales
+tmp/
+temp/
+.cache/
+
+# Datos sensibles
+.env
+.env.*
+certs/
+uploads/
+data/
+
+# Compilados o generados
+dist/
+build/
+coverage/
